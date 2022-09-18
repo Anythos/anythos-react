@@ -10,16 +10,16 @@ export function Login() {
     e.preventDefault();
 
     /* fetch("http://localhost:8080/anythos/admin/users", {
-          method: "GET",
-          headers: {
-            "Content-Type": "application/json",
-            Authorization: token,
-          },
-        })
-          .then((res) => res.json())
-          .then((res) => {
-            console.log(res);
-          });*/
+              method: "GET",
+              headers: {
+                "Content-Type": "application/json",
+                Authorization: token,
+              },
+            })
+              .then((res) => res.json())
+              .then((res) => {
+                console.log(res);
+              });*/
 
     fetch("http://localhost:8080/anythos/login", {
       method: "POST",
@@ -58,6 +58,7 @@ export function Login() {
               <div className="mt-6">
                 <div className="mb-5 pb-1border-b-2 text-center font-base text-gray-700">
                   <span>
+                    {" "}
                     By <span className="text-blue-500">@anythos</span>
                   </span>
                 </div>
@@ -68,7 +69,8 @@ export function Login() {
                   <div className="mx-auto max-w-lg">
                     <div className="py-2">
                       <span className="px-1 text-sm text-dark-700">
-                        Corporate Login
+                        {" "}
+                        Corporate Login{" "}
                       </span>
                       <input
                         id="login"
@@ -116,7 +118,17 @@ export function Login() {
               </div>
             </div>
 
-            {error && "Errrror!"}
+            {error && (
+              <div
+                className="bg-blue-100 rounded-lg py-5 px-6 mb-3 text-red-600 items-center w-full"
+                role="alert"
+              >
+                {" "}
+                Wrong credentials! <p>Try again or contact IT Helpdesk.</p>
+              </div>
+            )}
+
+            {/*{TODO:redirect to Dashboard}*/}
             {token && "Zalogowano!"}
           </div>
         </div>
