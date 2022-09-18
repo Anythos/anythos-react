@@ -68,7 +68,7 @@ export function Login() {
                 <form className="mt-8">
                   <div className="mx-auto max-w-lg">
                     <div className="py-2">
-                      <span className="px-1 text-sm text-dark-700">
+                      <span className="px-1 text-base text-dark-700">
                         {" "}
                         Corporate Login{" "}
                       </span>
@@ -82,7 +82,7 @@ export function Login() {
                       />
                     </div>
                     <div className="py-2">
-                      <span className="px-1 text-sm text-dark-700">
+                      <span className="px-1 text-base text-dark-700">
                         Password
                       </span>
                       <div className="relative">
@@ -96,13 +96,13 @@ export function Login() {
                         />
                       </div>
                     </div>
-                    <div className="flex justify-between">
-                      <label className="block text-gray-500 my-4">
+                    <div>
+                      <label className="block text-gray-500 my-4 text-right">
                         <a
                           href="#"
-                          className="cursor-pointer tracking-tighter text-gray border-b-2 border-gray-200 hover:border-gray-400"
+                          className=" cursor-pointer tracking-tighter text-gray border-b-2 border-gray-200 hover:border-gray-400"
                         >
-                          <span>Reset Password</span>
+                          Reset Password
                         </a>
                       </label>
                     </div>
