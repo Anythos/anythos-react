@@ -2,19 +2,18 @@ import React from "react";
 import { Login } from "./pages/login/Login";
 import { PageNotFound } from "./pages/PageNotFound";
 import { Provider } from "react-redux";
-import { BrowserRouter, Route, Switch } from "react-router-dom";
+import { BrowserRouter, Route } from "react-router-dom";
+import store from "./store/store";
 
 function App() {
   return (
-    <Provider store={store}>
-      <Login />;
-      <BrowserRouter>
-        <Switch>
-          <Route exact path="/home" component={Home} />
-          <Route component={PageNotFound} />
-        </Switch>
-      </BrowserRouter>
-    </Provider>
+    // TODO:implement Provider once store is configured
+    <BrowserRouter>
+      {/*<Routes>*/}
+      <Route exact path="/" component={Login} />
+      <Route component={PageNotFound} />
+      {/*</Routes>*/}
+    </BrowserRouter>
   );
 }
 
