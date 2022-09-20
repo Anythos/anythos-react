@@ -67,9 +67,9 @@ export function Login() {
                 <form className="mt-8">
                   <div className="mx-auto max-w-lg">
                     <div className="py-2">
-                      <span className="px-1 text-base text-dark-700">
+                      <label className="px-1 text-base text-dark-700">
                         Corporate Login
-                      </span>
+                      </label>
                       <input
                         id="login"
                         type="text"
@@ -80,9 +80,9 @@ export function Login() {
                       />
                     </div>
                     <div className="py-2">
-                      <span className="px-1 text-base text-dark-700">
+                      <label className="px-1 text-base text-dark-700">
                         Password
-                      </span>
+                      </label>
                       <div className="relative">
                         <input
                           id="password"
