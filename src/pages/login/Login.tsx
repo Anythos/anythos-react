@@ -58,7 +58,6 @@ export function Login() {
               <div className="mt-6">
                 <div className="mb-5 pb-1border-b-2 text-center font-base text-gray-700">
                   <span>
-                    {" "}
                     By <span className="text-blue-500">@anythos</span>
                   </span>
                 </div>
@@ -69,8 +68,7 @@ export function Login() {
                   <div className="mx-auto max-w-lg">
                     <div className="py-2">
                       <span className="px-1 text-base text-dark-700">
-                        {" "}
-                        Corporate Login{" "}
+                        Corporate Login
                       </span>
                       <input
                         id="login"
@@ -100,7 +98,7 @@ export function Login() {
                       <label className="block text-gray-500 my-4 text-right">
                         <a
                           href="#"
-                          className=" cursor-pointer tracking-tighter text-gray border-b-2 border-gray-200 hover:border-gray-400"
+                          className=" cursor-pointer tracking-tighter text-blue-500 border-b-2 border-gray-200 hover:border-gray-400"
                         >
                           Reset Password
                         </a>
@@ -129,7 +127,7 @@ export function Login() {
             )}
 
             {/*{TODO:redirect to Dashboard}*/}
-            {token && "Zalogowano!"}
+            {token && !error && "Zalogowano!"}
           </div>
         </div>
       </div>
