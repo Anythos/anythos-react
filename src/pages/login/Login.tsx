@@ -120,7 +120,6 @@ export function Login() {
                 className="bg-blue-100 rounded-lg py-5 px-6 mb-3 text-red-600 items-center w-full"
                 role="alert"
               >
-                {" "}
                 Wrong credentials!<p>Try again or contact IT Helpdesk.</p>
               </div>
             )}
