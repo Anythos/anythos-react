@@ -6,20 +6,20 @@ export function Login() {
   const [password, setPassword] = useState("");
   const [error, setError] = useState(false);
 
-  const handleSubmit = (e: React.MouseEvent<HTMLInputElement>) => {
+  const handleSubmit = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
 
     /* fetch("http://localhost:8080/anythos/admin/users", {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: token,
-      },
-    })
-      .then((res) => res.json())
-      .then((res) => {
-        console.log(res);
-      });*/
+              method: "GET",
+              headers: {
+                "Content-Type": "application/json",
+                Authorization: token,
+              },
+            })
+              .then((res) => res.json())
+              .then((res) => {
+                console.log(res);
+              });*/
 
     fetch("http://localhost:8080/anythos/login", {
       method: "POST",
@@ -50,27 +50,85 @@ export function Login() {
   }
 
   return (
-    <div>
-      <form>
-        <label htmlFor="login">Login</label>
-        <input
-          id="login"
-          type="text"
-          className="text"
-          onChange={(e) => handleUpdateUsername(e)}
-        />
+    <div className="container h-screen justify-center max-w-full mx-auto py-24 px-6 bg-blue-100">
+      <div className="font-sans">
+        <div className="max-w-sm mx-auto px-6">
+          <div className="relative flex flex-wrap">
+            <div className="w-full relative">
+              <div className="mt-6">
+                <div className="mb-5 pb-1border-b-2 text-center font-base text-gray-700">
+                  <span>
+                    By<span className="text-blue-500">@anythos</span>
+                  </span>
+                </div>
+                <div className="text-center text-2xl sm:text-3xl font-bold">
+                  Sign in
+                </div>
+                <form className="mt-8">
+                  <div className="mx-auto max-w-lg">
+                    <div className="py-2">
+                      <label className="px-1 text-base text-dark-700">
+                        Corporate Login
+                      </label>
+                      <input
+                        id="login"
+                        type="text"
+                        placeholder=""
+                        className="text-md block px-3 py-2 rounded-lg w-full bg-white border-2 border-gray-300 placeholder-gray-600 shadow-md
+                                                focus:placeholder-gray-500 focus:bg-white focus:border-gray-600 focus:outline-none"
+                        onChange={(e) => handleUpdateUsername(e)}
+                      />
+                    </div>
+                    <div className="py-2">
+                      <label className="px-1 text-base text-dark-700">
+                        Password
+                      </label>
+                      <div className="relative">
+                        <input
+                          id="password"
+                          type="password"
+                          placeholder=""
+                          className="text-md block px-3 py-2 rounded-lg w-full bg-white border-2 border-gray-300 placeholder-gray-600 shadow-md
+                                                    focus:placeholder-gray-500 focus:bg-white focus:border-gray-600 focus:outline-none"
+                          onChange={(e) => handleUpdatePassword(e)}
+                        />
+                      </div>
+                    </div>
+                    <div>
+                      <label className="block text-gray-500 my-4 text-right">
+                        <a
+                          href="#"
+                          className=" cursor-pointer tracking-tighter text-blue-500 border-b-2 border-gray-200 hover:border-gray-400"
+                        >
+                          Reset Password
+                        </a>
+                      </label>
+                    </div>
+                    <button
+                      className="mt-3 text-lg font-semibold bg-gray-800 w-full text-white rounded-lg px-6 py-3 block shadow-xl hover:text-white hover:bg-black"
+                      onClick={(e) => handleSubmit(e)}
+                    >
+                      Login
+                    </button>
+                  </div>
+                </form>
+              </div>
+            </div>
 
-        <label htmlFor="password">Hasło</label>
-        <input
-          id="password"
-          type="text"
-          onChange={(e) => handleUpdatePassword(e)}
-        />
-        <input type="submit" onClick={(e) => handleSubmit(e)} />
-      </form>
+            {error && (
+              <div
+                className="bg-blue-100 rounded-lg py-5 px-6 mb-3 text-red-600 items-center w-full"
+                role="alert"
+              >
+                Wrong credentials!<p>Try again or contact IT Helpdesk.</p>
+              </div>
+            )}
 
-      {error && "Errrror!"}
-      {token && "Zalogowano!"}
+            {/*{TODO:redirect to Dashboard}*/}
+            {token && !error && "Zalogowano!"}
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
