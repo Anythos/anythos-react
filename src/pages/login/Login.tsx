@@ -58,7 +58,7 @@ export function Login() {
               <div className="mt-6">
                 <div className="mb-5 pb-1border-b-2 text-center font-base text-gray-700">
                   <span>
-                    By <span className="text-blue-500">@anythos</span>
+                    By<span className="text-blue-500">@anythos</span>
                   </span>
                 </div>
                 <div className="text-center text-2xl sm:text-3xl font-bold">
@@ -108,7 +108,6 @@ export function Login() {
                       className="mt-3 text-lg font-semibold bg-gray-800 w-full text-white rounded-lg px-6 py-3 block shadow-xl hover:text-white hover:bg-black"
                       onClick={(e) => handleSubmit(e)}
                     >
-                      {" "}
                       Login
                     </button>
                   </div>
@@ -122,7 +121,7 @@ export function Login() {
                 role="alert"
               >
                 {" "}
-                Wrong credentials! <p>Try again or contact IT Helpdesk.</p>
+                Wrong credentials!<p>Try again or contact IT Helpdesk.</p>
               </div>
             )}
 
