@@ -19,13 +19,13 @@ export function Menu() {
       {/*Home*/}
       <div className={mainStyle}>
         <AiOutlineHome className="w-5 h-5 text-gray-400" />
-        <MenuItem name="Home" submenu="false" />
+        <MenuItem name="Home" submenu />
       </div>
 
       {/*My Profile*/}
       <div className={mainStyle}>
         <AiOutlineUser className=" w-5 h-5 text-rose-400" />
-        <MenuItem name="My Profile" submenu="true" />
+        <MenuItem name="My Profile" submenu={true} />
       </div>
 
       <SubMenuItem name="Personal Information" />
@@ -37,7 +37,7 @@ export function Menu() {
       {/*HR Services*/}
       <div className={mainStyle}>
         <FaHandsHelping className="w-5 h-5 text-sky-500" />
-        <MenuItem name="HR Services" submenu="true" />
+        <MenuItem name="HR Services" submenu={true} />
       </div>
 
       <SubMenuItem name="My Data" />
@@ -47,7 +47,7 @@ export function Menu() {
       {/*My Learning*/}
       <div className={mainStyle}>
         <MdSchool className="w-5 h-5 text-sky-500" />
-        <MenuItem name="My Learning" submenu="true" />
+        <MenuItem name="My Learning" submenu={true} />
       </div>
 
       <SubMenuItem name="My Registrations" />
@@ -56,7 +56,7 @@ export function Menu() {
       {/*Career*/}
       <div className={mainStyle}>
         <RiUserStarFill className="w-5 h-5 text-sky-500" />
-        <MenuItem name="Career" submenu="true" />
+        <MenuItem name="Career" submenu={true} />
       </div>
 
       <SubMenuItem name="My Applications" />
@@ -67,7 +67,7 @@ export function Menu() {
       {/*Community*/}
       <div className={mainStyle}>
         <FaUsers className="w-5 h-6 text-emerald-500" />
-        <MenuItem name="Community" submenu="true" />
+        <MenuItem name="Community" submenu={true} />
       </div>
 
       <SubMenuItem name="News and Events" />
@@ -77,7 +77,7 @@ export function Menu() {
       {/*Sale Offers*/}
       <div className={mainStyle}>
         <BiShoppingBag className="w-5 h-5 text-emerald-500" />
-        <MenuItem name="Sale Offers" submenu="false" />
+        <MenuItem name="Sale Offers" submenu />
       </div>
 
       <Separator />
@@ -85,7 +85,7 @@ export function Menu() {
       {/*Contacts & Support*/}
       <div className={mainStyle}>
         <MdOutlineLiveHelp className="w-5 h-5 text-amber-500" />
-        <MenuItem name="Contacts & Support" submenu="false" />
+        <MenuItem name="Contacts & Support" submenu />
       </div>
     </>
   );

@@ -1,7 +1,7 @@
 export function SidebarHeader() {
   return (
     <>
-      <div className="flex flex-col items-center mt-6 mb-3">
+      <div className="flex flex-col items-center mt-8 mb-3">
         {/*TODO:(Optional) Photo Upload Functionality*/}
         <img
           className="object-cover w-20 h-20 rounded-full items-center text-white"
