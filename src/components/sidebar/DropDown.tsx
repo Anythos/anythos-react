@@ -1,75 +1,29 @@
-import React, { useState } from "react";
-
-import { Menu } from "./Menu";
+import React, { ReactNode, useState } from "react";
+import { MenuItem } from "./MenuItem";
 
 export type MenuProps = {
-  openProfile: () => void;
-  openHr: () => void;
-  openLearning: () => void;
-  openCareer: () => void;
-  openCommunity: () => void;
-  profile: boolean;
-  hr: boolean;
-  learning: boolean;
-  career: boolean;
-  community: boolean;
+  name: string;
+  icon: ReactNode;
+  children: JSX.Element[];
 };
 
-export function DropDown() {
-  const [expanded, setExpanded] = useState({
-    profile: false,
-    hr: false,
-    learning: false,
-    career: false,
-    community: false,
-  });
+export function DropDown({ name, icon, children }: MenuProps) {
+  const [expanded, setExpanded] = useState(false);
 
-  const openProfile = () => {
-    setExpanded((prev) => ({
-      ...prev,
-      profile: !prev.profile,
-    }));
+  const handleSetExpanded = () => {
+    setExpanded(!expanded);
   };
 
-  const openHr = () => {
-    setExpanded((prev) => ({
-      ...prev,
-      hr: !prev.hr,
-    }));
-  };
-
-  const openLearning = () => {
-    setExpanded((prev) => ({
-      ...prev,
-      learning: !prev.learning,
-    }));
-  };
-
-  const openCareer = () => {
-    setExpanded((prev) => ({
-      ...prev,
-      career: !prev.career,
-    }));
-  };
-
-  const openCommunity = () => {
-    setExpanded((prev) => ({
-      ...prev,
-      community: !prev.community,
-    }));
-  };
   return (
-    <Menu
-      profile={expanded.profile}
-      hr={expanded.hr}
-      learning={expanded.learning}
-      career={expanded.career}
-      community={expanded.community}
-      openProfile={openProfile}
-      openHr={openHr}
-      openLearning={openLearning}
-      openCareer={openCareer}
-      openCommunity={openCommunity}
-    />
+    <>
+      <button
+        onClick={handleSetExpanded}
+        className="p-1 mt-4 flex w-full items-center text-gray-300 rounded-md px-4 duration-300 cursor-pointer hover:bg-blue-200 hover:text-black"
+      >
+        {icon}
+        <MenuItem name={name} submenu={true} isExpanded={expanded} />
+      </button>
+      {expanded && <>{children}</>}
+    </>
   );
 }

@@ -6,9 +6,9 @@ import { BiShoppingBag } from "react-icons/bi";
 import { SubMenuItem } from "./SubMenuItem";
 import { MenuItem } from "./MenuItem";
 import React from "react";
-import { MenuProps } from "./DropDown";
+import { DropDown } from "./DropDown";
 
-export function Menu(props: MenuProps) {
+export function Menu() {
   const mainStyle =
     "p-1 mt-4 flex items-center text-gray-300 rounded-md px-4 duration-300 cursor-pointer hover:bg-blue-200 hover:text-black";
 
@@ -25,84 +25,56 @@ export function Menu(props: MenuProps) {
       </div>
 
       {/*My Profile*/}
-      <div onClick={props.openProfile} className={mainStyle}>
-        <AiOutlineUser className=" w-5 h-5 text-rose-400" />
-        <MenuItem name="My Profile" isExpanded={props.profile} submenu={true} />
-      </div>
-
-      {props.profile && (
-        <>
-          <SubMenuItem name="Personal Information" />
-          <SubMenuItem name="Messages" />
-          <SubMenuItem name="Calendar" />
-        </>
-      )}
+      <DropDown
+        name="My Profile"
+        icon={<AiOutlineUser className=" w-5 h-5 text-rose-400" />}
+      >
+        <SubMenuItem name="Personal Information" />
+        <SubMenuItem name="Messages" />
+        <SubMenuItem name="Calendar" />
+      </DropDown>
 
       <Separator />
 
       {/*HR Services*/}
-      <div onClick={props.openHr} className={mainStyle}>
-        <FaHandsHelping className="w-5 h-5 text-sky-500" />
-        <MenuItem name="HR Services" isExpanded={props.hr} submenu={true} />
-      </div>
-
-      {props.hr && (
-        <>
-          <SubMenuItem name="My Data" />
-          <SubMenuItem name="My HR Requests" />
-          <SubMenuItem name="HR Portal" />
-        </>
-      )}
+      <DropDown
+        name="HR Services"
+        icon={<FaHandsHelping className="w-5 h-5 text-sky-500" />}
+      >
+        <SubMenuItem name="My Data" />
+        <SubMenuItem name="My HR Requests" />
+        <SubMenuItem name="HR Portal" />
+      </DropDown>
 
       {/*My Learning*/}
-      <div onClick={props.openLearning} className={mainStyle}>
-        <MdSchool className="w-5 h-5 text-sky-500" />
-        <MenuItem
-          name="My Learning"
-          isExpanded={props.learning}
-          submenu={true}
-        />
-      </div>
-
-      {props.learning && (
-        <>
-          <SubMenuItem name="My Registrations" />
-          <SubMenuItem name="Open Courses" />
-        </>
-      )}
+      <DropDown
+        name="My Learning"
+        icon={<MdSchool className="w-5 h-5 text-sky-500" />}
+      >
+        <SubMenuItem name="My Registrations" />
+        <SubMenuItem name="Open Courses" />
+      </DropDown>
 
       {/*Career*/}
-      <div onClick={props.openCareer} className={mainStyle}>
-        <RiUserStarFill className="w-5 h-5 text-sky-500" />
-        <MenuItem name="Career" isExpanded={props.career} submenu={true} />
-      </div>
-
-      {props.career && (
-        <>
-          <SubMenuItem name="My Applications" />
-          <SubMenuItem name="Search Jobs" />
-        </>
-      )}
+      <DropDown
+        name="Career"
+        icon={<RiUserStarFill className="w-5 h-5 text-sky-500" />}
+      >
+        <SubMenuItem name="My Applications" />
+        <SubMenuItem name="Search Jobs" />
+      </DropDown>
 
       <Separator />
 
       {/*Community*/}
-      <div onClick={props.openCommunity} className={mainStyle}>
-        <FaUsers className="w-5 h-6 text-emerald-500" />
-        <MenuItem
-          name="Community"
-          isExpanded={props.community}
-          submenu={true}
-        />
-      </div>
-
-      {props.community && (
-        <>
-          <SubMenuItem name="News and Events" />
-          <SubMenuItem name="Groups" />
-          <SubMenuItem name="Notice Board" />
-        </>
-      )}
+      <DropDown
+        name="Community"
+        icon={<FaUsers className="w-5 h-6 text-emerald-500" />}
+      >
+        <SubMenuItem name="News and Events" />
+        <SubMenuItem name="Groups" />
+        <SubMenuItem name="Notice Board" />
+      </DropDown>
 
       {/*Sale Offers*/}
       <div className={mainStyle}>
