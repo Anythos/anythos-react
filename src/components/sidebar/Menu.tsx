@@ -10,7 +10,7 @@ import { MenuProps } from "./DropDown";
 
 export function Menu(props: MenuProps) {
   const mainStyle =
-    "p-2 mt-4 flex items-center text-gray-300 rounded-md px-4 duration-300 cursor-pointer hover:bg-blue-200 hover:text-black";
+    "p-1 mt-4 flex items-center text-gray-300 rounded-md px-4 duration-300 cursor-pointer hover:bg-blue-200 hover:text-black";
 
   const Separator = () => {
     return <div className="my-5 mx-4 bg-gray-600 h-[1px]"></div>;
