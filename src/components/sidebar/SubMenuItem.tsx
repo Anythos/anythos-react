@@ -1,7 +1,6 @@
 interface SubItem {
   name: string;
 }
-
 export const SubMenuItem = ({ name }: SubItem) => {
   return (
     <>
